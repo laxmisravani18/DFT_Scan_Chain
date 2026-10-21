@@ -1,0 +1,41 @@
+PROJECT: Scan Chain Design and Stuck-at Fault Analysis
+
+1. RTL DESIGN
+   - Designed a scan flip-flop using Verilog HDL.
+   - Connected four scan flip-flops into a serial scan chain.
+   - Implemented functional mode and scan mode.
+
+2. FUNCTIONAL SIMULATION
+   - Simulator: Icarus Verilog
+   - Waveform viewer: GTKWave
+   - Generated scan_ff.vcd and scan_chain.vcd.
+
+3. FAULT MODELING
+   - Demonstrated stuck-at-0 (SA0) output fault behavior.
+   - Demonstrated stuck-at-1 (SA1) output fault behavior.
+   - Fault injection is performed at the observed output.
+   - Full internal scan-chain fault coverage has not yet been measured.
+
+4. SYNTHESIS
+   - Tool: Yosys
+   - Structural check: 0 problems reported.
+   - Generic D flip-flops: 4
+   - Generic multiplexers: 4
+
+5. GENERATED OUTPUTS
+   - results/synthesis_report.txt
+   - results/scan_chain_netlist.v
+   - sim/scan_ff.vcd
+   - sim/scan_chain.vcd
+   - sim/fault_analysis.vcd
+
+6. LIMITATIONS
+   - No technology-specific standard-cell mapping.
+   - No physical design or timing analysis.
+   - No quantitative internal stuck-at fault coverage.
+
+7. FUTURE WORK
+   - Add internal stuck-at fault injection.
+   - Develop self-checking testbenches.
+   - Measure fault coverage.
+   - Perform technology mapping and timing analysis.

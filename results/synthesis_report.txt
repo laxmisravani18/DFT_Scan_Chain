@@ -1,0 +1,226 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.66+154 (git sha1 23aadd92a, GNU /usr/bin/c++ 11.4.0)
+
+-- Running command `read_verilog rtl/scan_ff.v rtl/scan_chain.v; hierarchy -top scan_chain; proc; opt; check; stat' --
+
+1. Executing Verilog-2005 frontend: rtl/scan_ff.v
+Parsing Verilog input from `rtl/scan_ff.v' to AST representation.
+Generating RTLIL representation for module `\scan_ff'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/scan_chain.v
+Parsing Verilog input from `rtl/scan_chain.v' to AST representation.
+Generating RTLIL representation for module `\scan_chain'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \scan_chain
+Used module:     \scan_ff
+
+3.2. Analyzing design hierarchy..
+Top module:  \scan_chain
+Used module:     \scan_ff
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/scan_ff.v:10$1 in module scan_ff.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\scan_ff.$proc$rtl/scan_ff.v:10$1'.
+     1/1: $0\q[0:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\scan_ff.\q' using process `\scan_ff.$proc$rtl/scan_ff.v:10$1'.
+  created $dff cell `$procdff$6' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\scan_ff.$proc$rtl/scan_ff.v:10$1'.
+Removing empty process `scan_ff.$proc$rtl/scan_ff.v:10$1'.
+Cleaned up 1 empty switch.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module scan_chain.
+Optimizing module scan_ff.
+<suppressed ~1 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module scan_chain.
+Optimizing module scan_ff.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\scan_chain'.
+Computing hashes of 4 cells of `\scan_chain'.
+Finding duplicate cells in `\scan_chain'.
+Finding identical cells in module `\scan_ff'.
+Computing hashes of 2 cells of `\scan_ff'.
+Finding duplicate cells in `\scan_ff'.
+Removed a total of 0 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \scan_chain..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \scan_ff..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \scan_chain.
+  Optimizing cells in module \scan_ff.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\scan_chain'.
+Computing hashes of 4 cells of `\scan_chain'.
+Finding duplicate cells in `\scan_chain'.
+Finding identical cells in module `\scan_ff'.
+Computing hashes of 2 cells of `\scan_ff'.
+Finding duplicate cells in `\scan_ff'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \scan_chain..
+Finding unused cells or wires in module \scan_ff..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module scan_chain.
+Optimizing module scan_ff.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \scan_chain..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \scan_ff..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \scan_chain.
+  Optimizing cells in module \scan_ff.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\scan_chain'.
+Computing hashes of 4 cells of `\scan_chain'.
+Finding duplicate cells in `\scan_chain'.
+Finding identical cells in module `\scan_ff'.
+Computing hashes of 2 cells of `\scan_ff'.
+Finding duplicate cells in `\scan_ff'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \scan_chain..
+Finding unused cells or wires in module \scan_ff..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module scan_chain.
+Optimizing module scan_ff.
+
+5.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module scan_chain...
+Checking module scan_ff...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== scan_chain ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       12 wire bits
+        6 public wires
+       12 public wire bits
+        6 ports
+       12 port bits
+        4 submodules
+        4   scan_ff
+
+=== scan_ff ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+        6 wire bits
+        5 public wires
+        5 public wire bits
+        5 ports
+        5 port bits
+        2 cells
+        1   $dff
+        1   $mux
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+        8 scan_chain
+        2 scan_ff
+
+        +----------Count including submodules.
+        | 
+       30 wires
+       36 wire bits
+       26 public wires
+       32 public wire bits
+       26 ports
+       32 port bits
+        - memories
+        - memory bits
+        - processes
+        8 cells
+        4   $dff
+        4   $mux
+        4 submodules
+        4   scan_ff
+
+End of script. Logfile hash: 40cb3c1b84, time: 0.04s, user: 0.05s, system: 0.02s, MEM: 50.12 MB peak
+Yosys 0.66+154 (git sha1 23aadd92a, GNU /usr/bin/c++ 11.4.0)
+Time spent: 34% 3x opt_merge (0 sec), 24% 3x read_verilog (0 sec), ...

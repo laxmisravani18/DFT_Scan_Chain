@@ -1,0 +1,15 @@
+
+# Compiled simulation executables
+sim/scan_ff_compile
+sim/scan_ff_test
+sim/scan_chain_compile
+sim/scan_chain_test
+sim/fault_analysis_test
+
+# Temporary files
+*.log
+*.tmp
+*~
+
+# Editor and operating system files
+.DS_Store
