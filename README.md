@@ -57,7 +57,7 @@ These are generic synthesis cells, not technology-mapped standard cells.
 - `tb/` — simulation testbenches
 - `sim/` — simulation executables and VCD waveforms
 - `results/` — synthesis reports and generated netlist
-- `docs/` — additional documentation
+- `run.sh` — runs all simulations and Yosys synthesis
 
 ## 8. Future Improvements
 
@@ -65,4 +65,8 @@ These are generic synthesis cells, not technology-mapped standard cells.
 - Calculate fault coverage using test patterns.
 - Add automated self-checking testbenches.
 - Perform technology mapping using a standard-cell library.
-- Extend the design to larger
+- Extend the design to longer scan chains.
+
+## 9. How to Run
+
+Install the tools on Ubuntu: `sudo apt install -y iverilog gtkwave yosys`. Then run `./run.sh` from the project root. It simulates the three testbenches (VCD waveforms go to `sim/`) and writes the Yosys report and netlist to `results/`. View a waveform with `gtkwave sim/scan_chain.vcd`.

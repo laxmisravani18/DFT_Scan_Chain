@@ -221,6 +221,6 @@ Found and reported 0 problems.
         4 submodules
         4   scan_ff
 
-End of script. Logfile hash: 40cb3c1b84, time: 0.04s, user: 0.05s, system: 0.02s, MEM: 50.12 MB peak
+End of script. Logfile hash: 40cb3c1b84, time: 0.02s, user: 0.02s, system: 0.03s, MEM: 50.38 MB peak
 Yosys 0.66+154 (git sha1 23aadd92a, GNU /usr/bin/c++ 11.4.0)
-Time spent: 34% 3x opt_merge (0 sec), 24% 3x read_verilog (0 sec), ...
+Time spent: 29% 3x read_verilog (0 sec), 25% 3x opt_merge (0 sec), ...
